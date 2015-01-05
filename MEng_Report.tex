@@ -49,8 +49,9 @@
 
 % TITLE
 {\Large 
-Broad based RF Spectrum Occupancy survey of Blacksburg, VA and Chicago, IL
+RF Spectrum Occupancy Survey of Blacksburg, VA
 }
+% Capital S in Survey
 
 \vfill
 
@@ -64,14 +65,17 @@ Email: rk126@vt.edu
 
 \vfill
 
-\textbf{Committee members} \\
-Dr. Allen B. MacKenzie \\
-Dr. Luiz A. DaSilva \\
+\textbf{Committee Members} \\
+% Capital M in Members
+Dr. Allen B. MacKenzie (Co-chair) \\
+Dr. Luiz A. DaSilva (Co-chair) \\
 Dr. Jeffrey H. Reed
+% Indicated both Dr. MacKenzie and Dr. DaSilva as Co-chair
 
 \vfill
 
-October 18, 2014 \\
+January 26, 2014 \\
+% Changed date to defense date
 Blacksburg, Virginia
 
 \end{center}
@@ -86,7 +90,7 @@ Blacksburg, Virginia
 
 \end{center}
 
-In this report we will briefly discuss a broad-based RF spectrum survey conducted at Virginia Tech, Blacksburg, VA. The measurements for this spectrum study were collected from Virginia Tech's Spectrum Observatory whose installation is also discussed in this report. We compare the occupancy measurement plots for arbitrary weekday(s), regular weekend and college football (game day) weekends, looking for consistently varying occupancy patterns. We report only those bands which particularly shows variations in primary user occupancy over these periods. We also carry a similar comparison of RF spectrum of Blacksburg, VA and Chicago, IL on an arbitrarily chosen busy weekday.
+In this report we discuss a broad-based RF spectrum survey conducted at Virginia Tech in Blacksburg, VA. The measurements for this spectrum study were collected from Virginia Tech's Spectrum Observatory, and the installation of this observatory is also discussed in this report. We compare the spectrum occupancy for arbitrary weekdays, regular weekend days and college football weekend days, looking for consistent occupancy patterns. We report those bands which show interesting, explainable variations in spectrum occupancy over these periods. We also compare the spectrum usage in Blacksburg, VA to the spectrum usage in Chicago, IL on an arbitrarily chosen weekday.
 
 \vfill
 
@@ -108,9 +112,9 @@ In this report we will briefly discuss a broad-based RF spectrum survey conducte
 
 \section*{Acknowledgments}
 
-I am immensely grateful to my advisory chair, Dr Allen B. MacKenzie and my committee members, Dr Luiz A DaSilva and Dr Jeffrey H Reed who have provided excellent support and guidance, thereby encouraging me throughout my graduate school.
+I am immensely grateful to my committee's co-chairs, Dr. Allen B. MacKenzie, Dr. Luiz A. DaSilva and to my committee member Dr. Jeffrey H. Reed who have provided excellent support and guidance, thereby encouraging me throughout my graduate school.
 
-I would extend like to extend my acknowledgment to our project partners in Finland and Chicago for providing information on setting up the Virginia Tech Spectrum Observatory. I would like to thank my lab members Mr Abdallah S Abdallah and Mr Cameron Patterson for providing help in the installation of the observatory.
+I would extend like to extend my acknowledgment to our project partners in Finland and Chicago for providing information on setting up the Virginia Tech Spectrum Observatory. I would like to thank my lab members Mr. Abdallah S. Abdallah and Mr. Cameron Patterson for providing help in the installation of the observatory.
 
 Finally, I thank my family and friends for their extended support.
 \pagebreak
@@ -123,25 +127,21 @@ Finally, I thank my family and friends for their extended support.
 \section{Introduction}
 % \setcounter{section}{1}
 
-From the past two decades, wireless researchers have been conducting spectrum measurement campaigns, surveying spectrum occupancy in both urban and rural areas and also trying to come up with a mathematical model characterizing spectral usage. Most of their studies have shown that numerous spectrum bands lie vacant, though these bands are licensed by the regulatory bodies. Recently, Dynamic Spectrum Access (DSA) \cite{Akyildiz06nextgeneration/dynamic} has emerged as one of the plausible technique that would utilize the spectrum with maximum efficiency. So what is Dynamic Spectrum Access? With several bands (especially federal bands) that remain empty over a long period of time, while, there are bands which become heavily congested, DSA enables an opportunistic access of these sparsely occupied bands to the secondary users. These secondary users are issued with a license to use these empty bands and gracefully vacate them whenever the returning incumbent (or primary) user wants to use his/her band. This spawns another question of what type of radios are these networks made up of? And the answer is, radios that are capable of cognition, radios that are aware of their environment, Cognitive Radios \cite{Haykin05cognitiveradio} has been a buzz word ever since radios have evolved to what they call ``the software defined radio''. Thus, by exploiting cognitive radio networks with dynamic spectrum access techniques efficient spectrum utilization is a possibility. But, before reaching that far, one has to understand the primary user's spectrum occupancy patterns over a period of time at a particular place. In this report, we try to understand the patterns of spectrum occupancy in Blacksburg, VA in selected bands which consistently vary according to a particular event. We also take this opportunity to compare the occupancy in both Blacksburg and Chicago to find some spectrum bands showing interesting occupancy variations.
+For the past two decades, wireless researchers have been conducting spectrum measurement campaigns, surveying spectrum occupancy in both urban and rural areas. Researchers have also sought to develop mathematical models characterizing spectral usage. Most of these studies have shown that numerous spectrum bands lie vacant or underutilized, though licensed by the regulatory bodies. Recently, Dynamic Spectrum Access (DSA) has emerged as one plausible technique to improve spectrum utilization \cite{Akyildiz06nextgeneration/dynamic}. What is Dynamic Spectrum Access? DSA enables opportunistic access to sparsely occupied bands for secondary users. These secondary users are licensed to use these bands, but they must vacate them whenever the incumbent (or primary) user wants to use the band. The operation of a DSA system will be aided, though, by an understanding of the primary user's spectrum occupancy patterns over time at a particular place. In this report, we try to understand the patterns of spectrum occupancy in Blacksburg, VA in selected bands which vary according to a particular event. We also compare the occupancy in Blacksburg with the occupancy in Chicago and find some spectrum bands showing interesting occupancy variations.
 
-	\subsection{Motivation and Goal}
+	The objective of this broad-based spectrum occupancy measurement study is to gain insight into the occupancy of selected bands over weekdays, regular weekend days, and game days and then drawing conclusions based on the measurements and occupancy plots. These studies can provide an excellent baseline to mathematically model primary users' occupancy in selected bands.
 	
-	The potentiality of finding vacant spectrum in a decently sized university town like Blacksburg (population over 50,000 \cite{bbDemo}) makes it the best candidate to experiment Dynamic Spectrum Access mechanisms over these seemingly empty bands. This leads to a curiosity to look through the eyes of a RF spectrum monitoring device, filtering out those bands that vary in their occupancy over a period of time. This has been the primary motivation towards carrying out such a broad based spectrum study. The objective of this broad based spectrum occupancy measurement study is gaining insightful information on current trends of primary user occupancy in selected bands over arbitrary weekday(s), regular weekend(s) and game day weekends and then drawing conclusions based on the measurements and occupancy plots. These studies can provide an excellent baseline to mathematically model primary users' occupancy in selected bands.
-	
-	\subsection{Procedure}
-	
-	In order to meet with our objective, we first begin with the installation of our RF Spectrum Observatory here at Virginia Tech. We briefly discuss the installation and configuration of our spectrum observatory in Section 3. Once our observatory is up and running, we collect required measurements for arbitrarily selected regular weekdays, regular weekend and on game day weekends. In the section 4, we use these measurement data to plot three essential plots,
+	In order to meet our objective, we first installed an RF Spectrum Observatory at Virginia Tech. We briefly discuss the installation and configuration of the spectrum observatory in Section 3. Once the observatory was running, we collected required measurements for arbitrarily selected weekdays, regular weekend days, and game days. In the section 4, we use these measurements to create three essential plots:
 	\begin{enumerate}
-		\item[(a)] Power Spectrogram
-		\item[(b)] Min-max-mean Power Spectral Density with threshold
-		\item[(c)] Occupancy Charts
+		\item[(a)] Power Spectrograms % , which show ...; Need to add more info on plotting methodology
+		\item[(b)] Min-max-mean Power Spectral Density plots with a threshold % , which show ...; and
+		\item[(c)] Occupancy Charts %, which show ... .
 	\end{enumerate}
-	We also combine occupancy charts for the three unique days under consideration. By doing a band-by-band comparison we extract those bands where the variations in user occupancy is consistently distinct for a particular event (like Virginia Tech game day). In section 5, we draw conclusions on the basis of the variations observed.
+	By doing a band-by-band comparison we extract those bands where the variations in user occupancy are distinct for particular events (like a Virginia Tech football game). In section 5, we draw conclusions on the basis of the variations observed.
 
 \pagebreak
 
-\section{Related Work}
+\subsection{Related Work}
 
 The very first large scale spectrum measurement campaign was conducted in the year 1998 \cite{750342} by the National Telecommunications and Information Administration (NTIA), a Federal agency that is responsible to regulate the usage of government held spectrum in the United States. The work done by \textit{Wellens et. el} \cite{4549835}, talks about the spectrum occupancy measurement campaign conducted in the city of Aachen, Germany. They have briefly described their experience with the installation of spectrum monitoring system capable of carrying out spectrum measurements from 20 MHz to 6 GHz. They have used Amplitude Probability Distribution (APD), to investigate primary user activity. Another major measurement campaign led by \textit{McHenry et. el} \cite{McHenry:2006:CSO:1234388.1234389} through Shared Spectrum Company involves carrying out spectrum occupancy measurements at different locations \cite{SSCSpecReports}. In these reports, the SSC researchers have carried out occupancy measurements from 30 MHz to 2900 MHz and have plotted maximum power spectral density, power spectrogram, waterfall plots and duty-cycle occupancy charts.  In some of these reports they have compared the occupancy numbers per-band between two different places. From these reports, we can see that average occupancy in a rural setup is typically between 1\% and 3.4\% and that of an urban setup is typically between 11.4\% and 17.4\%. A very critical aspects of these measurements is the size of data-set used for comparison fairly varies over different places and as it is not coherent. This becomes questionable whether the per-band occupancy between two places comparable. Moreover, surrounding events on the day of the measurement also matters the most as the occupancy at any place is conditioned to these surrounding events at that time. Our work in this report follows the same procedure except that we primarily focus on those bands which show consistent variation pattern on Virginia Tech game days over regular college days. 
 
@@ -205,7 +205,7 @@ The Virginia Tech Spectrum Observatory was installed during May 2014 and it has 
 	\begin{figure}[ht!]
   \centering
     \includegraphics[width=0.95\textwidth]{observatory_site.png}
-		\caption{Observatory installed at Whittemore Hall's roof-top}
+		\caption{Observatory installed on the roof of Whittemore Hall}
 	\end{figure}
 
 \pagebreak
@@ -233,7 +233,7 @@ The thresholds for the occupancy measurements were carefully selected by plottin
 		\begin{figure}[ht!]
 			\centering
 				\includegraphics[width=0.95\textwidth]{LMR_comparison_gameday.png}
-			\caption{450 MHz - 470 MHz LMR band VT game day occupancy comparison}
+			\caption{450 - 470 MHz LMR band game day occupancy comparison}
 		\end{figure}
 		
 		\begin{enumerate}
@@ -254,7 +254,7 @@ The thresholds for the occupancy measurements were carefully selected by plottin
 		\begin{figure}[ht!]
 			\centering
 				\includegraphics[width=0.95\textwidth]{LMR_comparison_Blacksburg_Chicago.png}
-			\caption{Duty cycle plot from 450 MHz to 470 MHz LMR band for Blacksburg and Chicago occupancy comparison}
+			\caption{Duty cycle plot from 450 - 470 MHz LMR band for Blacksburg and Chicago}
 		\end{figure}
 		
 		Our first candidate LMR band which grabbed our attention is, the LMR band ranging from 450 MHz to 470 MHz. Figure 4 shows the duty cycle plot comparing spectrum occupancy in Blacksburg and Chicago for the weekday, August 27, 2014. From the figure, the first thing that comes into our mind is that, the bands in Chicago show a heavier occupancy over Blacksburg which is quite obvious. We will take the help of frequency database found in \cite{chicago_spec_occ} \cite{blacksburg_spec_occ}, where we find information on channel allocations, services offered, technology used, etc. There are numerous services that are being offered in this LMR band especially in the city of Chicago. Thus, we have put markers comparing both Blacksburg and Chicago to explain those frequency segments that interests us.
@@ -317,7 +317,7 @@ The thresholds for the occupancy measurements were carefully selected by plottin
 	\begin{figure}[ht!]
 		\centering
 			\includegraphics[width=0.95\textwidth]{700_MHz_LMR_comparison_Blacksburg_Chicago.png}
-		\caption{Duty cycle plot from 769 MHz to 774 MHz LMR band for Blacksburg and Chicago occupancy comparison}
+		\caption{Duty cycle plot from 769 - 774 MHz LMR band for Blacksburg and Chicago}
 	\end{figure}
 	
 	But, while going through these public safety bands, the narrowband segment 769 – 775 MHz appeared to be quite interesting. As we can see in figure 5, this narrowband segment shows a heavy occupancy in Chicago city and almost no occupancy in the Blacksburg area. The primary incumbents who operate in these bands are, Cook County’s sheriff’s Police Department, Pace suburban bus service of the RTA and DuPage County’s Emergency Telephone System Board. The table 1 shows the frequency operating at the particular frequencies.
