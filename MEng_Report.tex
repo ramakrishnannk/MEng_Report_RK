@@ -112,7 +112,7 @@ In this report we discuss a broad-based RF spectrum survey conducted at Virginia
 
 \section*{Acknowledgments}
 
-I am immensely grateful to my committee's co-chairs, Dr. Allen B. MacKenzie, Dr. Luiz A. DaSilva and to my committee member Dr. Jeffrey H. Reed who have provided excellent support and guidance, thereby encouraging me throughout my graduate school.
+I am immensely grateful to my committee's co-chairs, Dr. Allen B. MacKenzie, Dr. Luiz A. DaSilva and to my committee member, Dr. Jeffrey H. Reed, for providing excellent support and guidance, thereby encouraging me throughout my graduate school.
 
 I would extend like to extend my acknowledgment to our project partners in Finland and Chicago for providing information on setting up the Virginia Tech Spectrum Observatory. I would like to thank my lab members Mr. Abdallah S. Abdallah and Mr. Cameron Patterson for providing help in the installation of the observatory.
 
@@ -133,25 +133,23 @@ For the past two decades, wireless researchers have been conducting spectrum mea
 	
 	In order to meet our objective, we first installed an RF Spectrum Observatory at Virginia Tech. We briefly discuss the installation and configuration of the spectrum observatory in Section 3. Once the observatory was running, we collected required measurements for arbitrarily selected weekdays, regular weekend days, and game days. In the section 4, we use these measurements to create three essential plots:
 	\begin{enumerate}
-		\item[(a)] Power Spectrograms % , which show ...; Need to add more info on plotting methodology
-		\item[(b)] Min-max-mean Power Spectral Density plots with a threshold % , which show ...; and
-		\item[(c)] Occupancy Charts %, which show ... .
+		\item[(a)] Power Spectrograms, which show the variation in power of the signals over time for a selected band. These plots are sometimes also referred to as waterfall plots; % , which show ...; Need to add more info on plotting methodology
+		\item[(b)] Min-max-mean Power Spectral Density plots with a threshold, which shows the minimum, maximum and mean power of the signals for a selected band. We take the help of these plots to draw our decision threshold that would be used to generate the duty-cycle plots; and% , which show ...; and
+		\item[(c)] Occupancy Charts, which show the percentage of time the RF signal was above the decision threshold. These plots are also called duty-cycle plots. %, which show ... .
 	\end{enumerate}
-	By doing a band-by-band comparison we extract those bands where the variations in user occupancy are distinct for particular events (like a Virginia Tech football game). In section 5, we draw conclusions on the basis of the variations observed.
-
-\pagebreak
+	By doing a band-by-band comparison we extract those bands where the variations in user occupancy are distinct for particular events (like a Virginia Tech football game). In section 4, we draw conclusions on the basis of the variations observed.
 
 \subsection{Related Work}
 
-The very first large scale spectrum measurement campaign was conducted in the year 1998 \cite{750342} by the National Telecommunications and Information Administration (NTIA), a Federal agency that is responsible to regulate the usage of government held spectrum in the United States. The work done by \textit{Wellens et. el} \cite{4549835}, talks about the spectrum occupancy measurement campaign conducted in the city of Aachen, Germany. They have briefly described their experience with the installation of spectrum monitoring system capable of carrying out spectrum measurements from 20 MHz to 6 GHz. They have used Amplitude Probability Distribution (APD), to investigate primary user activity. Another major measurement campaign led by \textit{McHenry et. el} \cite{McHenry:2006:CSO:1234388.1234389} through Shared Spectrum Company involves carrying out spectrum occupancy measurements at different locations \cite{SSCSpecReports}. In these reports, the SSC researchers have carried out occupancy measurements from 30 MHz to 2900 MHz and have plotted maximum power spectral density, power spectrogram, waterfall plots and duty-cycle occupancy charts.  In some of these reports they have compared the occupancy numbers per-band between two different places. From these reports, we can see that average occupancy in a rural setup is typically between 1\% and 3.4\% and that of an urban setup is typically between 11.4\% and 17.4\%. A very critical aspects of these measurements is the size of data-set used for comparison fairly varies over different places and as it is not coherent. This becomes questionable whether the per-band occupancy between two places comparable. Moreover, surrounding events on the day of the measurement also matters the most as the occupancy at any place is conditioned to these surrounding events at that time. Our work in this report follows the same procedure except that we primarily focus on those bands which show consistent variation pattern on Virginia Tech game days over regular college days. 
+In 1998, a large scale spectrum measurement campaign was conducted by the National Telecommunications and Information Administration (NTIA), a Federal agency that is responsible for regulating the use of government-held spectrum in the United States \cite{750342}. The work done by \textit{Wellens et. el} \cite{4549835}, describes a spectrum occupancy measurement campaign conducted in the city of Aachen, Germany. The campaign used a spectrum monitoring system making spectrum measurements from 20 MHz to 6 GHz. % They have used Amplitude Probability Distribution (APD), to investigate primary user activity.
+Another major measurement campaign described in \textit{McHenry et. el} \cite{McHenry:2006:CSO:1234388.1234389} and conducted by Shared Spectrum Company (SSC) involved making spectrum occupancy measurements at several different locations including % ... TODO
+\cite{SSCSpecReports}. In these reports, SSC researchers have made occupancy measurements from 30 MHz to 2900 MHz and have plotted maximum power spectral density, power spectrogram, waterfall plots and duty-cycle occupancy charts. In these reports they have compared the occupancy per-band between different places. From these reports, we can see that average measured occupancy in rural areas is typically between 1\% and 3.4\% and in urban areas is typically between 11.4\% and 17.4\%. A critical aspect of these measurements is the size of the data-set used for comparison varies over different places and as it is not coherent. Moreover, surrounding events on the day of the measurement also impacts the most as the measured occupancy at any place. Our work in this report follows a similar procedure, focusing on bands which show consistent variation pattern between Virginia Tech game days and regular college days. 
 
-Virginia Tech spectrum observatory installation and the spectrum occupancy assessment study forms a part of a Global RF Spectrum Opportunistic Assessment project, a WiFiUS initiative \cite{HAGER_GRANT}. Our partners in this project, Illinois Institute of Technology, Chicago and VTT, Turku, Finland have successfully installed the spectrum observatory and have been carrying out measurements from almost a year. We sought help from our partners during the installation and configuration of our spectrum observatory. The reference \cite{6849666}, talks about the spectrum observatory installation and comparison of occupancy measurements carried out over these places.
+This study is a part of the Global RF Spectrum Opportunistic Assessment project, a WiFiUS initiative \cite{HAGER_GRANT}. Our partners in this project, the Illinois Institute of Technology, Chicago and VTT, the University of Oulu, and Turku University of Applied Sciences, Finland have successfully installed similar spectrum observatories and have been carrying out measurements from almost a year. We sought help from our partners during the installation and configuration of our spectrum observatory. Reference \cite{6849666} describes the spectrum observatory installation and compares occupancy measurements between locations.
 
 % (involving Chicago Spectrum Occupancy Measurements \& Analysis and a long term Studies Proposal, Mark McHenry's paper)
 
 % Evaluation of Spectrum Occupancy in Spain for Cognitive Radio Applications
-
-\pagebreak
 
 \section{Virginia Tech Spectrum Observatory System}
 
@@ -163,44 +161,46 @@ Virginia Tech spectrum observatory installation and the spectrum occupancy asses
 	\caption{High Level System Design}
 \end{figure}
 
-The Virginia Tech Spectrum Observatory was installed during May 2014 and it has been continuously monitoring RF spectrum from 30 MHz to 6 GHz since then. Figure 1 shows a high level system design of our spectrum observatory. The spectrum observatory has the following essential components:
+The Virginia Tech Spectrum Observatory was installed during May 2014 and has been continuously monitoring RF spectrum from 30 MHz to 6 GHz since then. Figure 1 shows a high level system design of our spectrum observatory. The spectrum observatory has the following essential components:
 \begin{enumerate}
-	\item[a.] \textbf{CRFS' RFEye Spectrum Sensor Node} - This is a core component and is capable of acquiring real-time spectrum data. The RF sensor node has the following hardware specifications:
+	\item[a.] \textbf{CRF' RFEye Spectrum Sensor Node} - This core component is capable of acquiring real-time spectrum data and has the following hardware specifications:
 	\begin{enumerate}
 		\item[i.] The in-built receiver has a range of 10 MHz to 6 GHz (can be extended up to 18 GHz with a Block down converter).
-		\item[ii.] It has a noise figure of typically 8 dB and 11 dB for 10 MHz - 4 GHz and 4 GHz - 6 GHz respectively.
-		\item[iii.] The receiver's spurious free dynamic range is at least 60 dB. More information on the RFEye receiver specification can be found at \cite{rfeye_specs}.
+		\item[ii.] It has a noise figure of typically 8 dB for 10 MHz - 4 GHz and 11 dB for 4 - 6 GHz respectively.
+		\item[iii.] The receiver's spurious free dynamic range is at least 60 dB.
 	\end{enumerate}
+	More information on the RFEye receiver specification can be found at \cite{rfeye_specs}.
 	Among the interfaces, we have, 
 	\begin{enumerate}
-		\item[i.] Four RF SMA inputs that aid in capturing real-time spectrum data, 
+		\item[i.] Four SMA inputs that can be used to connect a wide-band antenna  raw as well as filtered RF signals, 
 		\item[ii.] Two USB  2.0 ports (currently unused) that can be used to connect to local storage devices like flash drives for back-up and collecting logs, 
-		\item[iii.] GPS and cellular modem SMA interfaces, out of which the GPS port is currently connected to synchronize the system time with the UTC time. 
-		\item[iv.] Finally, the most important interface which is the 1 Gbps Power On Ethernet (PoE) port through which the node is currently powered up. It is the only gateway through which the node can be accessed and configured. The Ethernet port is also used to acquire spectrum data and store it to an external network hard drive. Hence, it forms the only point of contact to the RFEye node.
+		\item[iii.] GPS SMA interfaces, which connects the built-in GPS receiver to a GPS antenna. This helps in synchronizing the system time with the UTC time.
+		\item[iv.] Cellular modem SMA interface, which connects the built-in quad-band 850/900/1800/1900 MHz GSM/GPRS, UMTS/HSDPA transceiver to a trunk mounted antenna (TODO: check this antenna type). Currently it is not in use.
+		\item[v.] A 1 Gbps Ethernet port is the only interface through which the node can be accessed and configured. The Ethernet port is also used to store collected spectrum data to an external network hard drive. We also provide power to the RFEye node using power-over-Ethernet (PoE).
 	\end{enumerate}
 	
-	From a software perspective, the RFEye node runs a Linux based operating system with full C and Python development environment available. The system runs an in-built proprietary web-server designed by the company. The web interface for this server can be accessed through a regular browser. There are built-in proprietary applications that can be activated/deactivated, helping us in node configuration and data collection.
-	Some of the essential applications that are currently used to configure and collect data are:
+	From a software perspective, the RFEye node runs a Linux based operating system with full C and Python development environments available. The system runs an in-built proprietary web server, as well. A web interface can then be used to configure and control the RFEye node remotely.
+	Some of the essential web-based applications that are used to configure and collect data are:
 	\begin{enumerate}
-		\item[i.] NCPD, Control protocol server - This application helps in initially configuring the node, where we set the node information, RF input information and clock settings. We parse these information in a dictionary format while modifying the key values. One may find the current NCPD configuration in the appendix section.
-		\item[ii.] GPSD, GPS application - This application helps in configuring the parameters of in-built GPS receiver, like the debug level, position state (fixed or moving), communication port, baudrate, etc.
-		\item[iii.] LOGGER, logger application - This application forms the most important when it comes to storing of spectrum data. It also provides a highly flexible configuration file through which a well structured band plan can be implemented. More on logger configuration will be discussed in the subsection, ``Configuration of RFEye node''.
+		\item[i.] NCPD, Control protocol server - This application is used to configure the RFEye node. It is used to set the node information, RF input information, and clock settings. The current NCPD configuration is provided in the appendix section.
+		\item[ii.] GPSD, GPS application - This application is used to configure the parameters of the built-in GPS receiver, including the debug level, position state (fixed or moving), communication port, and baudrate.
+		\item[iii.] LOGGER, logger application - This application is used to configure the collection and storage of spectrum data. Using a flexible configuration file, a detailed plan of spectrum observations can be defined. More on the configuration of the logger will be discussed in the subsection, ``Configuration of RFEye node''.
 	\end{enumerate}
 	
-	\item[b.] \textbf{MP Antenna Super-M Ultra Base} - This is an ultra wide band spider antenna with a receive frequency range from 25 MHz to 6 GHz. The antenna is clamped to a seven feet high mast and has a N-type jack and connects to the input of the three way splitter.
+	\item[b.] \textbf{MP Antenna Super-M Ultra Base} - This is an ultra wideband spider antenna with a receive frequency range from 25 MHz to 6 GHz. The antenna is clamped to a seven foot mast and has a N-type jack which is connected to the input of the three-way splitter.
 	\item[c.] \textbf{Three way splitter} - The signal received by the antenna goes to the input of the three way splitter. Out of the three splitted outputs, two of them are filtered and fed into the input of the RFEye node. The third one is directly fed into the input of the RFEye node. 
-	\item[d.] \textbf{300 MHz high pass filter} - One of the splitted output from the three-way splitter is high pass filtered at 300 MHz to remove interference due to VHF signals.
-	\item[e.] \textbf{3 GHz high pass filter \& high gain wideband amplifier} - One of the splitted output from the three-way splitter is processed through a 3 GHz high pass filter which is in turn fed into a high gain wide band amplifier. The output signal from the amplifier is fed into as one of the input of the RFEye node.
-	\item[f.] \textbf{Network hard drive} - We have used a 3 TB Western Digital network hard drive for remotely storing the spectrum data acquired by the RFEye node.
+	\item[d.] \textbf{300 MHz high pass filter} - One of the outputs of the three-way splitter is high pass filtered at 300 MHz to remove interference due to VHF signals.
+	\item[e.] \textbf{3 GHz high pass filter \& high gain wideband amplifier} - One of the outputs from the three-way splitter is processed through a 3 GHz high pass filter which is in turn fed into a high gain wide band amplifier. The output signal from the amplifier is fed into one input of the RFEye node.
+	\item[f.] \textbf{Network hard drive} - We use a 3 TB Western Digital network hard drive for remotely storing the spectrum data acquired by the RFEye node.
 \end{enumerate}
 
 \subsection{Configuration of RFEye node}
 	
-	The logger application accepts a configuration file which provides complete information on spectrum data storage path and scans configured according to the band plan. We can configure the location of the log file, the location of the data directory (where the spectrum data will be stored), file size, log level, etc. We can also configure each scan by setting the parameters like start frequency, stop frequency, sweep time and resolution bandwidth. Once the logger configuration file is prepared, it is fed through the web interface and the logger application is activated. With the help of web interface, we can get to know the status of the logger application.
+	The logger application accepts a configuration file which provides complete information on spectrum scans and the associated data storage locations. We have configured this file according to the band plan developed as part of our research project. We can configure each scan by setting the parameters like start frequency, stop frequency, sweep time, and resolution bandwidth. We can also configure the location of the log file, the location of the data directory (where the spectrum data will be stored), file size, and log level. Once the logger configuration file is prepared, it is fed through the web interface and the logger application is activated. With the help of web interface, we can check on the status of the logger application.
 
 \subsection{Selecting an appropriate location}
 	
-	The observatory was installed on the roof-top of Whittemore hall. This location plays a very important role as it is less than a mile from the Downtown Blacksburg and almost a mile far from Lane stadium, the place where Virginia Tech college football is being held. Figure 2 shows the observatory location in Google maps with respect to the downtown Virginia Tech and lane stadium.
+	The observatory was installed on the roof-top of Whittemore hall. This location is less than a mile from Downtown Blacksburg and from Lane Stadium. Figure 2 shows the observatory location in Google maps with respect to the downtown Virginia Tech and Lane Stadium.
 	
 	\begin{figure}[ht!]
   \centering
