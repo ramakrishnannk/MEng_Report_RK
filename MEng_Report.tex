@@ -42,7 +42,6 @@
 \setcounter{tocdepth}{5}
 \begin{document}
 
-\bibliographystyle{plain}
 \thispagestyle{empty}
 \pagenumbering{roman}
 \begin{center}
@@ -90,7 +89,7 @@ Blacksburg, Virginia
 
 \end{center}
 
-In this report we discuss a broad-based RF spectrum survey conducted at Virginia Tech in Blacksburg, VA. The measurements for this spectrum study were collected from Virginia Tech's Spectrum Observatory, and the installation of this observatory is also discussed in this report. We compare the spectrum occupancy for arbitrary weekdays, regular weekend days and college football weekend days, looking for consistent occupancy patterns. We report those bands which show interesting, explainable variations in spectrum occupancy over these periods. We also compare the spectrum usage in Blacksburg, VA to the spectrum usage in Chicago, IL on an arbitrarily chosen weekday.
+In this report we discuss a broad-based RF spectrum survey conducted at Virginia Tech in Blacksburg, VA. The measurements for this spectrum study were collected from Virginia Tech's Spectrum Observatory, and the installation of this observatory is also discussed in this report. We compare the spectrum occupancy for arbitrary weekdays, regular weekend days and college football weekend days, looking for consistent occupancy patterns. We report primarily on those bands which show interesting, explainable variations in spectrum occupancy over these periods. We also compare the spectrum usage in Blacksburg, VA to the spectrum usage in Chicago, IL on an arbitrarily chosen weekday.
 
 \vfill
 
@@ -112,9 +111,9 @@ In this report we discuss a broad-based RF spectrum survey conducted at Virginia
 
 \section*{Acknowledgments}
 
-I am immensely grateful to my committee's co-chairs, Dr. Allen B. MacKenzie, Dr. Luiz A. DaSilva and to my committee member, Dr. Jeffrey H. Reed, for providing excellent support and guidance, thereby encouraging me throughout my graduate school.
+I am immensely grateful to my committee's co-chairs, Dr. Allen B. MacKenzie and Dr. Luiz A. DaSilva, and also my committee member, Dr. Jeffrey H. Reed, for providing excellent support and guidance, thereby encouraging me throughout my graduate school.
 
-I would extend like to extend my acknowledgment to our project partners in Finland and Chicago for providing information on setting up the Virginia Tech Spectrum Observatory. I would like to thank my lab members Mr. Abdallah S. Abdallah and Mr. Cameron Patterson for providing help in the installation of the observatory.
+I would like to extend my acknowledgment to our project partners in Finland and Chicago for providing information on setting up the Virginia Tech Spectrum Observatory. I would like to thank my lab members Mr. Abdallah S. Abdallah and Mr. Cameron W. Patterson for providing help in the installation of the observatory.
 
 Finally, I thank my family and friends for their extended support.
 \pagebreak
@@ -127,25 +126,26 @@ Finally, I thank my family and friends for their extended support.
 \section{Introduction}
 % \setcounter{section}{1}
 
-For the past two decades, wireless researchers have been conducting spectrum measurement campaigns, surveying spectrum occupancy in both urban and rural areas. Researchers have also sought to develop mathematical models characterizing spectral usage. Most of these studies have shown that numerous spectrum bands lie vacant or underutilized, though licensed by the regulatory bodies. Recently, Dynamic Spectrum Access (DSA) has emerged as one plausible technique to improve spectrum utilization \cite{Akyildiz06nextgeneration/dynamic}. What is Dynamic Spectrum Access? DSA enables opportunistic access to sparsely occupied bands for secondary users. These secondary users are licensed to use these bands, but they must vacate them whenever the incumbent (or primary) user wants to use the band. The operation of a DSA system will be aided, though, by an understanding of the primary user's spectrum occupancy patterns over time at a particular place. In this report, we try to understand the patterns of spectrum occupancy in Blacksburg, VA in selected bands which vary according to a particular event. We also compare the occupancy in Blacksburg with the occupancy in Chicago and find some spectrum bands showing interesting occupancy variations.
+For the past two decades, there has been an increase in the number of spectrum measurement campaigns that are being carried out in an effort to survey spectrum occupancy in both urban and rural areas. Researchers have also sought to develop mathematical models characterizing spectral usage. Most of these studies have shown that numerous spectrum bands lie vacant or underutilized, though licensed by the regulatory bodies. Recently, Dynamic Spectrum Access (DSA) has emerged as one plausible technique to improve spectrum utilization \cite{IEEEexample:Akyildiz06nextgeneration}. What is Dynamic Spectrum Access? DSA enables opportunistic access to sparsely occupied bands for secondary users. These secondary users are licensed to use these bands, but they must vacate them whenever the incumbent (or primary) user wants to use the band. The operation of a DSA system will be aided, though, by an understanding of the primary user's spectrum occupancy patterns over time at a particular place. In this report, we try to understand the patterns of spectrum occupancy in Blacksburg, VA in selected bands which vary according to a particular event. We also compare the occupancy in Blacksburg with the occupancy in Chicago and find some spectrum bands showing interesting occupancy variations.
 
-	The objective of this broad-based spectrum occupancy measurement study is to gain insight into the occupancy of selected bands over weekdays, regular weekend days, and game days and then drawing conclusions based on the measurements and occupancy plots. These studies can provide an excellent baseline to mathematically model primary users' occupancy in selected bands.
+	The objective of this broad-based spectrum occupancy measurement study is to gain insight into the occupancy of selected bands over weekdays, regular weekend days, and game days and then drawing conclusions based on the measurements and occupancy plots.
+	% These studies can provide an excellent baseline to mathematically model primary users' occupancy in selected bands.
 	
-	In order to meet our objective, we first installed an RF Spectrum Observatory at Virginia Tech. We briefly discuss the installation and configuration of the spectrum observatory in Section 3. Once the observatory was running, we collected required measurements for arbitrarily selected weekdays, regular weekend days, and game days. In the section 4, we use these measurements to create three essential plots:
+	In order to meet our objective, we first installed an RF Spectrum Observatory at Virginia Tech. We briefly discuss the installation and configuration of the spectrum observatory in Section 2. Once the observatory was running, we collected required measurements for arbitrarily selected weekdays, regular weekend days, and game days. In the section 3, we use these measurements to create three essential plots:
 	\begin{enumerate}
-		\item[(a)] Power Spectrograms, which show the variation in power of the signals over time for a selected band. These plots are sometimes also referred to as waterfall plots; % , which show ...; Need to add more info on plotting methodology
-		\item[(b)] Min-max-mean Power Spectral Density plots with a threshold, which shows the minimum, maximum and mean power of the signals for a selected band. We take the help of these plots to draw our decision threshold that would be used to generate the duty-cycle plots; and% , which show ...; and
-		\item[(c)] Occupancy Charts, which show the percentage of time the RF signal was above the decision threshold. These plots are also called duty-cycle plots. %, which show ... .
+		\item[(a)] Power Spectrograms, which show the variation in signal power over time for a selected band of frequencies. These plots are sometimes also referred to as waterfall plots; % , which show ...; Need to add more info on plotting methodology
+		\item[(b)] Min-max-mean Power Spectral Density plots with a threshold, which show the minimum, maximum and mean signal power over a selected band of frequencies. We take the help of these plots to draw our decision threshold that would be used to generate the duty-cycle plots (also known as occupancy charts); and% , which show ...; and
+		\item[(c)] Occupancy Charts, which show the percentage of given time the RF signal was above the decision threshold. %, which show ... .
 	\end{enumerate}
 	By doing a band-by-band comparison we extract those bands where the variations in user occupancy are distinct for particular events (like a Virginia Tech football game). In section 4, we draw conclusions on the basis of the variations observed.
 
 \subsection{Related Work}
 
 In 1998, a large scale spectrum measurement campaign was conducted by the National Telecommunications and Information Administration (NTIA), a Federal agency that is responsible for regulating the use of government-held spectrum in the United States \cite{750342}. The work done by \textit{Wellens et. el} \cite{4549835}, describes a spectrum occupancy measurement campaign conducted in the city of Aachen, Germany. The campaign used a spectrum monitoring system making spectrum measurements from 20 MHz to 6 GHz. % They have used Amplitude Probability Distribution (APD), to investigate primary user activity.
-Another major measurement campaign described in \textit{McHenry et. el} \cite{McHenry:2006:CSO:1234388.1234389} and conducted by Shared Spectrum Company (SSC) involved making spectrum occupancy measurements at several different locations including % ... TODO
-\cite{SSCSpecReports}. In these reports, SSC researchers have made occupancy measurements from 30 MHz to 2900 MHz and have plotted maximum power spectral density, power spectrogram, waterfall plots and duty-cycle occupancy charts. In these reports they have compared the occupancy per-band between different places. From these reports, we can see that average measured occupancy in rural areas is typically between 1\% and 3.4\% and in urban areas is typically between 11.4\% and 17.4\%. A critical aspect of these measurements is the size of the data-set used for comparison varies over different places and as it is not coherent. Moreover, surrounding events on the day of the measurement also impacts the most as the measured occupancy at any place. Our work in this report follows a similar procedure, focusing on bands which show consistent variation pattern between Virginia Tech game days and regular college days. 
+Another major measurement campaign described in \textit{McHenry et. el} \cite{McHenry:2006:CSO:1234388.1234389} and conducted by Shared Spectrum Company (SSC) involved making spectrum occupancy measurements at several different locations including Northern Virginia, Chicago, Dublin in Ireland, New York City and National Radio Astronomy Observatory (NRAO) in West Virginia \cite{SSCSpecReportIreland} \cite{SSCSpecReportChicago} \cite{SSCSpecReportRiverbendPark} \cite{SSCSpecReportNYC} \cite{SSCSpecReportNRAO}. In these reports, SSC researchers have made occupancy measurements from 30 MHz to 2900 MHz and have plotted maximum power spectral density, power spectrogram, waterfall plots and duty-cycle occupancy charts. In these reports they have compared the occupancy per-band between different places. From these reports, we can see that average measured occupancy in rural areas is typically between 1\% and 3.4\% and in urban areas is typically between 11.4\% and 17.4\%. % A critical aspect of these measurements is the size of the data-set used for comparison varies over different places and as it is not coherent.
+The surrounding events on the day of the measurement also impacts the measured occupancy at any place. Our work in this report follows a similar procedure, focusing on bands which show consistent variation pattern between Virginia Tech game days and regular college days. 
 
-This study is a part of the Global RF Spectrum Opportunistic Assessment project, a WiFiUS initiative \cite{HAGER_GRANT}. Our partners in this project, the Illinois Institute of Technology, Chicago and VTT, the University of Oulu, and Turku University of Applied Sciences, Finland have successfully installed similar spectrum observatories and have been carrying out measurements from almost a year. We sought help from our partners during the installation and configuration of our spectrum observatory. Reference \cite{6849666} describes the spectrum observatory installation and compares occupancy measurements between locations.
+This study is a part of the Global RF Spectrum Opportunistic Assessment project, a WiFiUS initiative \cite{HAGER_GRANT}. Our partners in this project, the Illinois Institute of Technology, Chicago and VTT, the University of Oulu, Turku University of Applied Sciences, Finland have successfully installed similar spectrum observatories and have been carrying out measurements from almost a year. We sought help from our partners during the installation and configuration of our spectrum observatory. Reference \cite{6849666} describes the spectrum observatory installation and compares occupancy measurements between locations.
 
 % (involving Chicago Spectrum Occupancy Measurements \& Analysis and a long term Studies Proposal, Mark McHenry's paper)
 
@@ -163,7 +163,7 @@ This study is a part of the Global RF Spectrum Opportunistic Assessment project,
 
 The Virginia Tech Spectrum Observatory was installed during May 2014 and has been continuously monitoring RF spectrum from 30 MHz to 6 GHz since then. Figure 1 shows a high level system design of our spectrum observatory. The spectrum observatory has the following essential components:
 \begin{enumerate}
-	\item[a.] \textbf{CRF' RFEye Spectrum Sensor Node} - This core component is capable of acquiring real-time spectrum data and has the following hardware specifications:
+	\item[a.] \textbf{RFEye Spectrum Sensor Node} - This core component is capable of acquiring real-time spectrum data and has the following hardware specifications:
 	\begin{enumerate}
 		\item[i.] The in-built receiver has a range of 10 MHz to 6 GHz (can be extended up to 18 GHz with a Block down converter).
 		\item[ii.] It has a noise figure of typically 8 dB for 10 MHz - 4 GHz and 11 dB for 4 - 6 GHz respectively.
@@ -172,10 +172,10 @@ The Virginia Tech Spectrum Observatory was installed during May 2014 and has bee
 	More information on the RFEye receiver specification can be found at \cite{rfeye_specs}.
 	Among the interfaces, we have, 
 	\begin{enumerate}
-		\item[i.] Four SMA inputs that can be used to connect a wide-band antenna  raw as well as filtered RF signals, 
+		\item[i.] Four SMA inputs that can receive raw or filtered RF signals coming from the antenna output, 
 		\item[ii.] Two USB  2.0 ports (currently unused) that can be used to connect to local storage devices like flash drives for back-up and collecting logs, 
 		\item[iii.] GPS SMA interfaces, which connects the built-in GPS receiver to a GPS antenna. This helps in synchronizing the system time with the UTC time.
-		\item[iv.] Cellular modem SMA interface, which connects the built-in quad-band 850/900/1800/1900 MHz GSM/GPRS, UMTS/HSDPA transceiver to a trunk mounted antenna (TODO: check this antenna type). Currently it is not in use.
+		\item[iv.] Cellular modem SMA interface (currently unused), which connects the built-in quad-band 850/900/1800/1900 MHz GSM/GPRS, UMTS/HSDPA transceiver to a compatible antenna. It has a built-in SIM card port too.
 		\item[v.] A 1 Gbps Ethernet port is the only interface through which the node can be accessed and configured. The Ethernet port is also used to store collected spectrum data to an external network hard drive. We also provide power to the RFEye node using power-over-Ethernet (PoE).
 	\end{enumerate}
 	
@@ -188,9 +188,9 @@ The Virginia Tech Spectrum Observatory was installed during May 2014 and has bee
 	\end{enumerate}
 	
 	\item[b.] \textbf{MP Antenna Super-M Ultra Base} - This is an ultra wideband spider antenna with a receive frequency range from 25 MHz to 6 GHz. The antenna is clamped to a seven foot mast and has a N-type jack which is connected to the input of the three-way splitter.
-	\item[c.] \textbf{Three way splitter} - The signal received by the antenna goes to the input of the three way splitter. Out of the three splitted outputs, two of them are filtered and fed into the input of the RFEye node. The third one is directly fed into the input of the RFEye node. 
+	\item[c.] \textbf{Three way splitter} - The signal received by the antenna goes to the input of the three way splitter. Of the three splitted outputs, one is filtered and one is filtered and amplified before being fed into inputs of the RFEye node. The third one is directly fed into an input of the RFEye node. 
 	\item[d.] \textbf{300 MHz high pass filter} - One of the outputs of the three-way splitter is high pass filtered at 300 MHz to remove interference due to VHF signals.
-	\item[e.] \textbf{3 GHz high pass filter \& high gain wideband amplifier} - One of the outputs from the three-way splitter is processed through a 3 GHz high pass filter which is in turn fed into a high gain wide band amplifier. The output signal from the amplifier is fed into one input of the RFEye node.
+	\item[e.] \textbf{3 GHz high pass filter \& high gain wideband amplifier} - One of the outputs from the three-way splitter is processed through a 3 GHz high pass filter which is in turn fed into a high gain wide band amplifier. The output signal from the amplifier is fed into an input of the RFEye node.
 	\item[f.] \textbf{Network hard drive} - We use a 3 TB Western Digital network hard drive for remotely storing the spectrum data acquired by the RFEye node.
 \end{enumerate}
 
@@ -200,35 +200,36 @@ The Virginia Tech Spectrum Observatory was installed during May 2014 and has bee
 
 \subsection{Selecting an appropriate location}
 	
-	The observatory was installed on the roof-top of Whittemore hall. This location is less than a mile from Downtown Blacksburg and from Lane Stadium. Figure 2 shows the observatory location in Google maps with respect to the downtown Virginia Tech and Lane Stadium.
+	The observatory was installed on the roof-top of Whittemore hall. This location is less than a mile from Downtown Blacksburg and from Lane Stadium.
 	
 	\begin{figure}[ht!]
   \centering
-    \includegraphics[width=0.95\textwidth]{observatory_site.png}
+    \includegraphics[width=0.85\textwidth]{observatory_site.png}
 		\caption{Observatory installed on the roof of Whittemore Hall}
 	\end{figure}
 
-\pagebreak
+Figure 2 shows the observatory location in Google maps with respect to the downtown Virginia Tech and Lane Stadium.
 
 	% Explanation about the band-plan
 %%% ******************************** Complete till here ************************************************* %%%
 
 \section{Spectrum Measurements and Occupancy comparison}
 
-In this section we will use the collected measurement data from the spectrum observatory and carry out an occupancy comparison. Our first subsection will deal in finding out those bands which vary in their occupancy over Virginia Tech football game with respect to a regular weekday and a regular weekend. We also swept through different bands from 30 MHz to 3 GHz that possibly change due to the football event.
+In this section we will use the collected measurement data from the spectrum observatory and carry out an occupancy comparison. Our first subsection will deal in finding bands which vary in their occupancy between Virginia Tech football game days, regular weekdays, and regular weekend days. To identify such bands, we examined spectrum activity from 30 MHz to 3 GHz.
 
-In the second subsection we repeat the same exercise of occupancy comparison with Blacksburg and Chicago's spectrum data. The measurements in Chicago were collected using a similar spectrum observatory situated on the rooftop of the IIT tower.
-We arbitrarily selected the same weekday, Aug 27, 2014 for Blacksburg and for Chicago. We then scanned through the spectrum 30 MHz - 3 GHz spectrum to find out those bands which show a significant occupancy variation.
+In the second subsection we repeat the same exercise, comparing between Blacksburg and Chicago's spectrum data. The measurements in Chicago were collected using a similar spectrum observatory situated on the rooftop of the IIT tower.
+We arbitrarily selected the same weekday, Aug 27, 2014 for Blacksburg and for Chicago. We then examined the spectrum from 30 MHz to 3 GHz to find bands which show a significant occupancy variation.
+% The thresholds for the occupancy measurements were carefully selected by plotting the minimum, maximum and mean power spectral density.
 
-The thresholds for the occupancy measurements were carefully selected by plotting the minimum, maximum and mean power spectral density. For the LMR band comparison, we chose a threshold of -93 dBm for the Blacksburg data and -109 dBm for the Chicago measurements.
-
-	\subsection{Broad based RF measurements and occupancy comparison for a regular weekday, regular weekend day and a weekend Virginia Tech game day}
+	\subsection{RF Measurements and Occupancy for Virginia Tech Game Day}
 	
-	In this subsection we will be comparing the spectrum bands which show significant variation in their occupancy during Virginia Tech football game weekends with respect to a regular college day and a regular weekends. We arbitrarily chose the fall 2014 season's Virginia Tech first college football which was held on Aug 30, 2014. We also picked arbitrary weekday Aug 27, 2014 and a regular weekend on Oct 11, 2014. As we scan through the RF spectrum, we notice some variations in the following band:
+	In this subsection we will be comparing the spectrum bands which show significant variation in their occupancy during Virginia Tech football game days as compared to a regular college day and a regular weekend day. We arbitrarily chose the first college football game of Virginia Tech's 2014 season, which was held on Aug 30, 2014. We also picked arbitrary weekday Aug 27, 2014 and a weekend day (Fall Break) on Oct 11, 2014, for comparison. % TODO Change the regular weekend day to Oct 18, 2014. 
+	As we scan through the RF spectrum, we notice some variations in the following band:
 	
 		\subsubsection{Measurement comparison for the LMR band of 450 MHz to 470 MHz}
 		
-		From figure 3, we can see that Virginia Tech game day has a higher occupancy than the regular weekday. Also, during regular weekend, the occupancy is much lower than a regular weekday or a game day weekend due to minimal usage of public safety systems. We use markers to point the frequency segments that distinctly show a higher occupancy on a game day. We further investigate the reasoning behind the surge in the occupancy using Blacksburg's LMR spectrum database \cite{blacksburg_spec_occ} which gives detailed information about the incumbent users and services provided by these primary users per channel.
+		From figure 3, we can see that Virginia Tech game day has a higher occupancy than the regular weekday. On October 11 % TODO Change it to October 18
+		, the occupancy is much lower than a regular weekday or a game day, due to the fact that many students and others were out of the town for Fall Break, resulting in minimal usage of public safety systems. We use markers to point out frequency segments that show a higher occupancy on a game day. We further investigate the usage of specific channels using Blacksburg's LMR spectrum database \cite{blacksburg_spec_occ} which gives detailed information about the incumbent users of each.
 		
 		\begin{figure}[ht!]
 			\centering
@@ -237,17 +238,17 @@ The thresholds for the occupancy measurements were carefully selected by plottin
 		\end{figure}
 		
 		\begin{enumerate}
-			\item[(a)] Marker 1 shows a higher occupancy in channel frequencies that provide school related services on the game day. For e.g., 451.8625 MHz provides parking services and 452.2 MHz is used by Virginia Tech for special events. It is quite obvious that parking on a game day is more busier than a regular day which in turn is busier than a regular weekend. There is also a surge in the occupancy of Montgomery County's sheriff's dispatch which operates at 452.3 and 452.35 MHz.
-			\item[(b)] Marker 2 also shows a higher occupancy in channel frequencies that provide school related services on the game day. For e.g., 461.7875 and 461.8875 MHz provides Virginia Tech Emergency Medical Services (EMS) and facility services. The Virginia Tech athletics service is provided at frequencies 463.4875 and 464.5875 MHz which obviously shows a surge on the Virginia Tech game day with respect to regular weekday and a regular weekend.
+			\item[(a)] Marker 1 shows a higher occupancy on certain frequencies. 451.8625 MHz is used by Virginia Tech Parking Services, 452.2 MHz is used by Virginia Tech for special events, and 453.0125 MHz is used by Virginia Tech University Unions and Student Activities. A game day is more busier than a regular day which in turn is busier than a regular weekend. There is also a surge in the occupancy of Montgomery County's Sheriff's dispatch which operates at 452.3, 452.35 and 453.2 MHz.
+			\item[(b)] Marker 2 also shows a higher occupancy on certain frequencies. 461.7875 and 461.8875 MHz are used for Virginia Tech Emergency Medical Services (EMS) and facility services, respectively. Virginia Tech Athletics operates at 463.4875 and 464.5875 MHz.
 		\end{enumerate}
 		
-		Thus we see a perceivable change in occupancy in those LMR channels which are affiliated with the event and also the services that are influenced either directly or indirectly by the event.
+		Thus we see a perceivable change in occupancy in those LMR channels which are directly associated with the event and also the services that are influenced by the event.
 		
-		Apart from browsing other bands for variations in game day occupancy, we expected that the cellular band would be a potential candidate for occupancy comparison. However after going through the measurement plots of cellular band's uplink, the occupancy numbers were misleading because these handheld devices transmit at a very low power and by using a simple energy detector to get the occupancy numbers, we would certainly miss a lot of uplink transmissions. Also for our cellular downlink measurements, we didn't find any variations in the power levels on a game day weekend or a regular weekday or a regular weekend. 
+		Apart from browsing other bands for variations in game day occupancy, we expected that the cellular band would be a candidate for occupancy comparison. However after going through the measurement plots of cellular band's uplink, the occupancy numbers were misleading because these handheld devices transmit at low power causing an energy detector to miss a lot of uplink transmissions. For cellular downlink frequencies, we didn't find any variations in the power levels between a game day, a regular weekday, and a regular weekend day. 
  	
-	\subsection{Broad based RF measurements and occupancy comparison for a regular weekday in Blacksburg, VA and Chicago, IL}
+	\subsection{RF Measurements and Occupancy Compared Between Blacksburg, VA and Chicago, IL}
 	
-	In this subsection we will be peeking into the spectrum bands of both Chicago and Blacksburg which show significant differences in terms of their occupancy. We also try to add up as much information about the incumbent users operating in these bands, the wireless technology they are using over these bands.
+	In this subsection we examine the spectrum bands of both Chicago and Blacksburg which show significant differences in terms of occupancy. We also try to add information about the incumbent users operating in these bands and the wireless technology they are using.
 	
 		\subsubsection{Scanning through the Land Mobile Radio (LMR) band}
 		
@@ -257,61 +258,61 @@ The thresholds for the occupancy measurements were carefully selected by plottin
 			\caption{Duty cycle plot from 450 - 470 MHz LMR band for Blacksburg and Chicago}
 		\end{figure}
 		
-		Our first candidate LMR band which grabbed our attention is, the LMR band ranging from 450 MHz to 470 MHz. Figure 4 shows the duty cycle plot comparing spectrum occupancy in Blacksburg and Chicago for the weekday, August 27, 2014. From the figure, the first thing that comes into our mind is that, the bands in Chicago show a heavier occupancy over Blacksburg which is quite obvious. We will take the help of frequency database found in \cite{chicago_spec_occ} \cite{blacksburg_spec_occ}, where we find information on channel allocations, services offered, technology used, etc. There are numerous services that are being offered in this LMR band especially in the city of Chicago. Thus, we have put markers comparing both Blacksburg and Chicago to explain those frequency segments that interests us.
+		Figure 4 shows the duty cycle plot comparing spectrum occupancy in Blacksburg and Chicago for August 27, 2014 (a weekday) for 450 - 470 MHz, part of the LMR band. For this LMR band comparison, we chose a threshold of -93 dBm for the Blacksburg data and -109 dBm for the Chicago measurements (see appendix for more information on decision thresholds). From the figure, we see that the bands in Chicago show a heavier occupancy than those in Blacksburg, as expected. Using the frequency database found in \cite{chicago_spec_occ} \cite{blacksburg_spec_occ}, we see that there are numerous services that are being offered in this band, especially in the city of Chicago. Thus, we have markers to explain those frequency segments that interests us.
 		
 		\begin{enumerate}
 		
-			\item[(a)] Marker 1 shows around 10\% occupancy in Blacksburg and around 2\% occupancy in Chicago for the channel occupying the frequency segments 450.8 - 451.4 MHz. In Blacksburg, the channels in 450.8 - 451.4 MHz segment having center frequencies 451.1, 451.275 and 451.375 MHz are used by the Town of Blacksburg's fire dispatch, tactical command (tac) and Montgomery County's sheriff respectively. In Chicago, school services and public works telemetry services are offered at the frequencies 451.1875 (4), 451.1125, 451.1375 (2), 451.1625 and 460.175 (2). The round brackets with a number in it indicates that these frequencies are being spatially reused.
-			Though there are services offered in Chicago, the figure 2 notably shows lesser occupancy as compared to Blacksburg in the 450.8 - 451.4 MHz segment.
+			\item[(a)] Marker 1 shows around 10\% occupancy in Blacksburg and around 2\% occupancy in Chicago for the channel occupying the frequency segments 450.8 - 451.4 MHz. In Blacksburg, the channels in 450.8 - 451.4 MHz segment having center frequencies 451.1, 451.275 and 451.375 MHz are used by the Town of Blacksburg's fire dispatch, tactical command (tac) and Montgomery County Sheriff, respectively. In Chicago, school services and public works telemetry services are offered at the frequencies 451.1875, 451.1125, 451.1375, 451.1625 and 460.175, with some of these frequencies being spatially reused within Chicago. 
+			Thus, although there are services offered in Chicago using these frequencies, Figure 2 suggests that they are used less intensively than in Blacksburg, at least at the measurement location in Chicago.
 			
-			\item[(b)] Marker 2 shows comparatively higher occupancy for Chicago than Blacksburg. We compare the channels allocated and services provided within each frequency segment which are pointed by these markers:
+			\item[(b)] Marker 2 shows comparatively higher occupancy for Chicago than Blacksburg. We compare the channels allocated and services provided within each frequency segment identified by these markers:
 			
 			\begin{enumerate}
 				
-				\item[(i)] In Chicago the channels in the 451.75 - 452.5 MHz segment are used mainly for Trunked Radio System (serves multiple services with the same channel allocation), school maintenance. operations and services. For e.g., the channel frequencies 451.7675 MHz is used for operations in schools located in Riverside and Brookfield, 461.81250 MHz for security, operations and maintenance of Proviso Township High School. The segment also provides channels that are allocated for private businesses. For e.g. the channel at 451.85 MHz is also used in Cargo/Shipping companies and the channel at 452.125 MHz is used for Northwest airlines ground operations. This segment also provides transportation services. For e.g. channel frequencies 452.3625, 452.3875 MHz  are used by Taxi-cab.
+				\item[(i)] In Chicago the channels in the 451.75 - 452.5 MHz segment are used mainly for trunked radio systems (which serve multiple services with the same channel or set of channels). For example, 451.7675 MHz is used for operations in schools located in Riverside and Brookfield, and 461.81250 MHz is used for security, operations, and maintenance of Proviso Township High School. The segment also provides channels that are allocated for private businesses. For example, 451.85 MHz is used for Cargo/Shipping companies and 452.125 MHz is used for Delta airlines ground operations. This segment also provides transportation services. For example, 452.3625 and 452.3875 MHz are used by taxi companies.
 				
-				In Blacksburg, the channels in the 451.75 - 452.5 MHz segment are used by Virginia Tech Parking services at 451.8625 MHz, Montgomery County's Fire tac which operates at 451.7875 MHz and Virginia Tech's Communication Network Services operating at 452 MHz. This segment also offers EMS services at 452.425 and 452.25 MHz, provided by the Riner Rescue Squad and Christiansburg Rescue respectively. Apart from this, the school provides services during special event (like Virginia Tech football game) at 452.2 MHz.
+				In Blacksburg, the channels in the 451.75 - 452.5 MHz segment are used by Virginia Tech Parking services at 451.8625 MHz, Montgomery County's Fire tac which operates at 451.7875 MHz, and Virginia Tech's Communication Network Services operating at 452 MHz. This segment is also used by EMS services at 452.425 and 452.25 MHz, provided by the Riner Rescue Squad and Christiansburg Rescue Squad, respectively. Apart from this, Virginia Tech uses 452.2 MHz for special events (including football games).
 				
-				\item[(ii)] In Chicago, the channels in the 453 - 453.5 MHz segment are used for services like transportation and public works. For e.g., Chicago Transit Authority uses channel frequencies, 453.225, 453.375, 453.425 and 453.475 MHz to provide wireless communications for their running buses. The parking garage services at Evanston uses 453.0625 and 453.0875 MHz. The Metropolitan water reclamation district uses channels having center frequencies 453.275 and 453.3375 MHz.
+				\item[(ii)] In Chicago, the channels in the 453 - 453.5 MHz segment are used for services like transportation and public works. For example, the Chicago Transit Authority uses 453.225, 453.375, 453.425 and 453.475 MHz to provide wireless communications for their buses. The parking garage services at Evanston use 453.0625 and 453.0875 MHz. The Metropolitan Water Reclamation District uses 453.275 and 453.3375 MHz.
 				
-				In Blacksburg, the channels in the 453 - 453.5 MHz segment are used for school services, county's and town's law and order. For e.g. Blacksburg Police Department's dispatch services are handled at 453.4875 MHz.
+				In Blacksburg, the channels in the 453 - 453.5 MHz segment are used for school services and law and order. For example, the Blacksburg Police Department's dispatch services are at 453.4875 MHz.
 				
 			\end{enumerate}
 			
-			\item[(c)] Marker 3 shows relatively higher occupancy for Blacksburg than Chicago in channels that are in the frequency range of 453.6 - 454 MHz. In Blacksburg, Virginia Tech Police Department operates dispatch services at 453.875 MHz, Blacksburg Transit Authority uses 453.625 and 453.85 MHz for their operations. The Montgomery County's sheriff also offers law and order services in this frequency segment. In Chicago, there are few allocations in this segment and they provide services mostly related to public works. For e.g. the ground maintenance services offered in North Berwyn Park District at 453.6375 MHz.
+			\item[(c)] Marker 3 shows relatively higher occupancy for Blacksburg than Chicago in channels that are in the range of 453.6 - 454 MHz. In Blacksburg, Virginia Tech Police Department operates dispatch services at 453.875 MHz, and the Blacksburg Transit Authority uses 453.625 and 453.85 MHz for their operations. The Montgomery County Sheriff also offers law and order services in this frequency segment. In Chicago, there are few allocations in this segment, and they provide services mostly related to public works. For example, the ground maintenance services offered in North Berwyn Park District use 453.6375 MHz.
 			
-			%\item[(d)] Marker 4 shows heavy occupancy only in Chicago area and almost no occupancy in Blacksburg. The channel segments that fall in this category are 454 - 456 MHz, 462.7 - 463.4 MHz.
+			%\item[(d)] Marker 4 shows heavy occupancy only in Chicago area and almost no occupancy in Blacksburg. The channel segments that fall in this category are 454 - 456 MHz.
 			%
 			%\begin{enumerate}
 				%\item[(i)] The channel segment
 				%\item[(ii)] The channel segment
 			%\end{enumerate}
 			
-			\item[(d)] From marker 4 we can see that there is a higher occupancy in Blacksburg centered at 460 MHz. This is because of an unknown incumbent user centered at 460 MHz. In Chicago, its Police Department uses the band ranging from 460 to 460.6 for their operations citywide. The EMS teams also use this band for their operations in Chicago city. Thus, we can see relatively a higher occupancy from 460 to 460.6 MHz band in Chicago than in Blacksburg.
+			\item[(d)] From marker 4 we can see that there is a higher occupancy in Blacksburg centered at 460 MHz. This is because of an unknown incumbent user centered at 460 MHz. In Chicago, its Police Department uses the 460 - 460.6 MHz band for their operations citywide. EMS teams also use this band for their operations in Chicago. Thus, we can see relatively a higher occupancy from 460 to 460.6 MHz band in Chicago than in Blacksburg.
 			
 	\end{enumerate}
 	
-	Thus, looking at the overall occupancy numbers which is 4.06\% and 10.09\% in Blacksburg and Chicago respectively, it is quite obvious as we can see that the city of Chicago has a higher channel allocations \cite{chicago_spec_occ} which in turn has a heavier occupancy as compared to Blacksburg. Also, some channel segments in this 450 - 470 MHz have an active Trunked Radio Services which further increases the occupancy of the channels in those frequency segments as compared to Blacksburg. But, from markers 1 and 3, we can see that there are some segments where Blacksburg's channel occupancy outnumbers Chicago's. This is because, in Blacksburg, these marked channel segments provide crucial services related to the law and order, transportation, etc. unlike public works related services provided in Chicago which leads to low occupancy.
+	Looking at the overall occupancy, 4.06\% and 10.09\% in Blacksburg and Chicago, respectively, it is quite obvious that the city of Chicago has more channels allocated \cite{chicago_spec_occ} and a heavier occupancy as compared to Blacksburg. Also, some channel segments in this 450 - 470 MHz band have active trunked radio systems in order to improve the utilization of the band in those frequency segments. But, from markers 1 and 3, we can see that there are some segments where Blacksburg's channel occupancy is higher than Chicago's. This is because, in Blacksburg, these marked channel segments provide crucial services related to the law and order and transportation, while the same segments are used for lower-utilization public works in Chicago.
 	
-	Our second candidate spectrum band that has a higher spectrum allocations and occupancy in Chicago is the 700 MHz LMR band. The 700 MHz Public Safety band extends from 763 - 775 MHz and 793 - 805 MHz \cite{fcc_700_MHz_lmr}. This band is divided into three segments \cite{fcc_700_MHz_lmr}:
+	Another band that has a higher spectrum allocations and occupancy in Chicago is the 700 MHz LMR band. The 700 MHz Public Safety band extends from 763 - 775 MHz and 793 - 805 MHz \cite{fcc_700_MHz_lmr}. This band is divided into three segments \cite{fcc_700_MHz_lmr}:
 	
 	\begin{enumerate}
-		\item[(i)] 763 - 768/793 - 798 MHz segment allocated for public safety broadband communications
-		\item[(ii)] 768 – 769/798 – 799 MHz segment is reserved as a guard band
-		\item[(iii)] 769 – 775/799 – 805 MHz segment allocated for public safety narrowband communications - The two narrowband segments, 769 - 775 MHz are used for base operations and 799 - 805 MHz used for mobile operations. Each narrowband segment is divided into 960 channels, with each channel having a size of 6.25 kHz.
+		\item[(i)] 763-768/793-798 MHz segment allocated for public safety broadband communications
+		\item[(ii)] 768-769/798-799 MHz segment is reserved as a guard band
+		\item[(iii)] 769-775/799-805 MHz segment allocated for public safety narrowband communications - The two narrowband segments, 769 - 775 MHz are used for base operations and 799 - 805 MHz used for mobile operations. Each narrowband segment is divided into 960 channels, with each channel having a size of 6.25 kHz.
 	\end{enumerate}
 	
 	\begin{table}[ht!]
 	\centering
 		\begin{tabular}{| p{1cm} | p{6cm} | p{4cm} |}
 		\hline
-		Sr. No. & Service Name & Frequencies used (in MHz)	\\	\hline
+		No. & Service Name & Frequencies used (in MHz)	\\	\hline
 		1. & Cook County's Sheriff's Police Department & 769.5125, 773.1375, 774.9125, 769.2625, 769.8125, 770.2625, 771.2625, 771.5375, 771.9875, 772.3875, 773.3875, 773.6375 \\ \hline
 		2. & Pace Suburban Bus Service of the RTA & 772.64375	\\	\hline
 		3. & DuPage County's Emergency Telephone System Board (ETSB) & 769.33125, 769.75625, 770.05625, 770.80625	\\
 		\hline
 		\end{tabular}
-		\caption{769 - 775 MHz LMR allocations in Chicago city}
+		\caption{769 - 775 MHz LMR allocations in Chicago}
 	\end{table}
 	
 	\begin{figure}[ht!]
@@ -320,76 +321,76 @@ The thresholds for the occupancy measurements were carefully selected by plottin
 		\caption{Duty cycle plot from 769 - 774 MHz LMR band for Blacksburg and Chicago}
 	\end{figure}
 	
-	But, while going through these public safety bands, the narrowband segment 769 – 775 MHz appeared to be quite interesting. As we can see in figure 5, this narrowband segment shows a heavy occupancy in Chicago city and almost no occupancy in the Blacksburg area. The primary incumbents who operate in these bands are, Cook County’s sheriff’s Police Department, Pace suburban bus service of the RTA and DuPage County’s Emergency Telephone System Board. The table 1 shows the frequency operating at the particular frequencies.
+	The narrowband segment at 769-775 MHz is of particular interest. As we can see in figure 5, this narrowband segment shows heavy occupancy in Chicago and almost no occupancy in Blacksburg. The primary incumbents who operate in these bands are the Cook County Sheriff, the Pace suburban bus service and DuPage County's Emergency Telephone System Board. Table 1 shows which entities are operating at particular frequencies.
 	
-	The markers in the figure 5 correspond to the serial number in table 1. Thus we can see a higher occupancy of the 700 MHz LMR spectrum in urban areas which is not at all used in a college town like Blacksburg.
+	The markers in the figure 5 correspond to the numbers in Table 1. Thus we can see a high occupancy of the 700 MHz LMR spectrum in Chicago, while the band is not at all used in Blacksburg.
 	
 	\subsubsection{Comparison of occupancy in Television bands}
 	
 	\begin{table}[h!]
 		\begin{tabular}{| p{2cm} | p{2cm} | p{3cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
 		\hline
-		RF channel \#	& Virtual channel \#	& Frequency Range (In MHz)	& Callsign 	& Primary User 	& Location (in VA) & Power (in kW) \\	\hline
+		RF channel \#	& Frequency Range (In MHz)	& Callsign 	& Network & Location & Power (in kW) \\	\hline
 		
-		3 &	15 & 60 - 66 & WBRA-TV & PBS & Roanoke & 8 \\ \hline
-		% Occupied
-		13 & 13 & 234 - 240 & WSET-TV &	ABC & Lynchburg	& 28.7 \\ \hline
-		% Not Occupied
-		17 & 27 & 488 - 494 & WFXR & Fox & Roanoke & 695 \\ \hline
-		% Occupied
-		18 & 7 & 494 - 500 & WDBJ & CBS &	Roanoke &	460 \\	\hline
-		% Occupied
-		20 & 21 & 506 - 512 & WWCW & CW & Lynchburg	&	916 \\	\hline
-		% Not Occupied
-		30 & 10 & 566 - 572 &	WSLS-TV &	NBC &	Roanoke & 1000 \\	\hline
-		% Occupied
-		36 & 38 & 602 - 608 & WPXR-TV & ION & Roanoke & 700 \\
-		% Occupied
+		3 & 60 - 66 & WBRA-TV & PBS & Roanoke & 8 \\ \hline
+		% VC 15 Occupied
+		13 & 234 - 240 & WSET-TV &	ABC & Lynchburg	& 28.7 \\ \hline
+		% VC 13 Not Occupied
+		17 & 488 - 494 & WFXR & Fox & Roanoke & 695 \\ \hline
+		% VC 27 Occupied
+		18 & 494 - 500 & WDBJ & CBS &	Roanoke &	460 \\	\hline
+		% VC 7 Occupied
+		20 & 506 - 512 & WWCW & CW & Lynchburg	&	916 \\	\hline
+		% VC 21 Not Occupied
+		30 & 566 - 572 &	WSLS-TV &	NBC &	Roanoke & 1000 \\	\hline
+		% VC 10 Occupied
+		36 & 602 - 608 & WPXR-TV & ION & Roanoke & 700 \\
+		% VC 38 Occupied
 		\hline
 		\end{tabular}
-		\caption{TV channel information near Blacksburg, VA}
+		\caption{Broadcast TV channels near Blacksburg, VA}
 	\end{table}
 	
-	We next compare the spectrum allocation and occupancy of Television (TV) band, both in Chicago and in Blacksburg. The reception of TV signals in the town of Blacksburg is from the nearby city, Roanoke which is 40 miles far. Whereas Chicago city has higher number of TV stations within the city limits and nearby. Table 2 enlists the TV channels that are possibly received in Blacksburg \cite{tv_channel_info_blacksburg} \cite{tv_channel_frequencies}. Similarly, table 3 lists the TV channels that are possibly received in Chicago \cite{tv_channel_info_chicago} \cite{tv_channel_frequencies}. These tables will just give us the information about the primary incumbents of the particular channel. But with the help of the power spectrogram plots, we compare occupancy of TV bands both in Blacksburg and Chicago area.
+	We next compare the spectrum allocation and occupancy of Broadcast Television (TV) band in Chicago and Blacksburg. Most TV signals that can be potentially received in Blacksburg are from Roanoke which is approximately 40 miles away, while some originate in Lynchburg, which is approximately 60 miles away. In Chicago, TV broadcast occurs from within city limits and nearby. Table 2 lists the TV channels that may possibly be received in Blacksburg \cite{tv_channel_info_blacksburg} \cite{tv_channel_frequencies}. Similarly, table 3 lists the TV channels that may possibly be received in Chicago \cite{tv_channel_info_chicago} \cite{tv_channel_frequencies}. These tables give us information about the primary incumbents of a particular channel. Using the power spectrogram plots, though, we compare the occupancy of TV bands in the two locations.
 	
 	\begin{table}[ht!]
 		\begin{tabular}{| p{2cm} | p{2cm} | p{3cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
 		\hline
-		RF channel \#	& Virtual channel \#	& Frequency Range (in MHz)	& Callsign 	& Primary User 	& Location 	& Power (in kW) \\	\hline
+		RF channel \#	& Frequency Range (in MHz)	& Callsign 	& Primary User 	& Location 	& Power (in kW) \\	\hline
 		
-		12 & 2 & 204 - 210 & WBBM-TV & CBS & Chicago, IL & 8 \\	\hline
+		12 & 204 - 210 & WBBM-TV & CBS & Chicago, IL & 8 \\	\hline
 		% Occupied
-		29 & 5 & 560 - 566 & WMAQ-TV & NBC & Chicago, IL & 350 \\	\hline
+		17 & 488 - 494 & WYIN & Northwest Indiana Public Broadcast & Gary, IN & 300 \\ \hline
 		% Occupied
-		44 & 7 & 650 - 656 & WLS-TV & ABC & Chicago, IL & 1000	\\	\hline
+		19 & 500 - 506 & WGN-TV & CW & Chicago, IL & 645 \\	\hline
 		% Occupied
-		19 & 9 & 500 - 506 & WGN-TV & CW & Chicago, IL & 645 \\	\hline
+		21 & 512 - 518 & WYCC & PBS & Chicago, IL & 98.9	\\	\hline
 		% Occupied
-		47 & 11 & 668 - 674 & WTTW & PBS & Chicago, IL & 300 \\	\hline
+		27 & 548 - 554 & WCIU-TV & Independent station & Chicago, IL & 160 \\	\hline
 		% Occupied
-		21 & 20 & 512 - 518 & WYCC & PBS & Chicago, IL & 98.9	\\	\hline
+		29 & 560 - 566 & WMAQ-TV & NBC & Chicago, IL & 350 \\	\hline
 		% Occupied
-		27 & 26 & 548 - 554 & WCIU-TV & Independent station & Chicago, IL & 160 \\	\hline
+		31 & 572 - 578 & WFLD & Fox & Chicago, IL & 1000	\\	\hline
 		% Occupied
-		31 & 32 & 572 - 578 & WFLD & Fox & Chicago, IL & 1000	\\	\hline
+		36 & 602 - 608 & WJYS & Independent station & Hammond, IN & 50	\\	\hline
 		% Occupied
-		43 & 38 & 644 - 650 & WCPX-TV & ION & Chicago, IL & 200 \\	\hline
+		38 & 614 - 620 & WGBO-DT & UNI & Joliet, IL & 600	\\	\hline
 		% Occupied
-		45 & 44 & 656 - 662 & WSNS-TV & TEL & Chicago, IL & 467 \\	\hline
+		43 & 644 - 650 & WCPX-TV & ION & Chicago, IL & 200 \\	\hline
 		% Occupied
-		51 & 50 & 692 - 698 & WPWR-TV & MNT & Gary, IN & 1000	\\	\hline
+		44 & 650 - 656 & WLS-TV & ABC & Chicago, IL & 1000	\\	\hline
 		% Occupied
-		50 & 60 & 686 - 692 & WXFT-DT & TF & Aurora, IL & 172	\\	\hline
+		45 & 656 - 662 & WSNS-TV & TEL & Chicago, IL & 467 \\	\hline
 		% Occupied
-		36 & 62 & 602 - 608 & WJYS & Independent station & Hammond, IN & 50	\\	\hline
+		47 & 668 - 674 & WTTW & PBS & Chicago, IL & 300 \\	\hline
 		% Occupied
-		38 & 66 & 614 - 620 & WGBO-DT & UNI & Joliet, IL & 600	\\	\hline
+		50 & 686 - 692 & WXFT-DT & TF & Aurora, IL & 172	\\	\hline
 		% Occupied
-		17 & 56 & 488 - 494 & WYIN & Northwest Indiana Public Broadcast & Gary, IN & 300 \\
+		51 & 692 - 698 & WPWR-TV & MNT & Gary, IN & 1000	\\
 		% Occupied
 		\hline
 		\end{tabular}
-		\caption{TV channel information near Chicago, IL}
+		\caption{Broadcast TV channels near Chicago, IL}
 	\end{table}
 	
 	\begin{figure}[ht!]
@@ -398,8 +399,8 @@ The thresholds for the occupancy measurements were carefully selected by plottin
 		\caption{Power Spectrogram from 470 to 512 MHz for the entire day of Aug 27, 2014 comparing Chicago and Blacksburg}
 	\end{figure}
 	
-	As we can see that we have shown the power spectrogram plots comparing Blacksburg and Chicago from 470 to 698 MHz in figure 6. From the figure 6, we can see that for Blacksburg, the channel number 17 is occupied. From table 2 we can check that the RF channel 17 is operated by Fox in Blacksburg. The TV transmitter for this station is located in Roanoke. Also, from the figure we can see that the same channel is being operated by Northwest Indiana Public Broadcast company and the transmitter is located in Gary, IN which is 40 miles away from the city of Chicago. 
-	Similarly, for Blacksburg, we can see from the figure that the RF channel 18 is also occupied by CBS. In Chicago, the same TV channel is unoccupied. We can also see that the RF channel 20 is unoccupied in Blacksburg though it operated by CW Television Network. Another channel from Lynchburg i.e. RF channel 13 operated by ABC is also not received in Blacksburg (not shown in figure). Both of these TV channels' transmitters are located in Lynchburg which is roughly 60 miles far from Blacksburg. 
+	Figure 6 shows power spectrogram plots comparing Blacksburg and Chicago from 470 to 512 MHz. From the figure, we can see that for Blacksburg, channel 17 is occupied. From Table 2 we can see that RF channel 17 is operated by Fox. The TV transmitter for this station is located in Roanoke. We can see that the same channel is occupied in Chicago, operated by Northwest Indiana Public Broadcast company. The transmitter for that station is located in Gary, IN which is about 40 miles away from Chicago. 
+	For Blacksburg, we can see that the RF channel 18 is also occupied (by CBS). In Chicago, the same channel is unoccupied. We can also see that RF channel 20 appears unoccupied in Blacksburg, though the broadcaster CW Television Network transmits on that channel from Lynchburg. Similarly, RF channel 13, also transmitting in Lynchburg, is not apparent on the Blacksburg spectrograph. 
 	
 	\begin{figure}[ht!]
 		\centering
@@ -413,12 +414,11 @@ The thresholds for the occupancy measurements were carefully selected by plottin
 		\caption{Power Spectrogram from 608 to 698 MHz for the entire day of Aug 27, 2014 comparing Chicago and Blacksburg}
 	\end{figure}
 	
-	We have also shown the power spectrogram plots comparing Blacksburg and Chicago from 512 to 608 MHz and 608 to 698 MHz in figure 7 and 8 respectively. While comparing both these figures, we find that almost all the channels listed in the table 2 and table 3 are found occupied. The location of the transmitters for TV channels WXFT-DT, WJYS and WGBO-DT are all within the 50 miles radius from Chicago city.
+	Figures 7 and 8 also show power spectrogram plots comparing Blacksburg and Chicago from 512 to 608 MHz and 608 to 698 MHz, respectively. While comparing both these figures, we find a good correspondance with the channels listed in Table 2 and 3, found occupied. The location of the transmitters for TV channels 50, 36 and 38 are all within 50 miles of Chicago.
 	
-	Also, from figure 7, RF channels 25, 26, 30 and 32 are seemingly occupied in Chicago but the primary users information is not known. Also, from figure 8 channels 39 and 49 are found occupied but their PUs information is not known.
+	Also, from Figures 7 \& 8, RF channels 25, 26, 30, 32, 39 and 40 appear to be occupied in Chicago, but the primary users identity is not known.
 	
-	Thus it is pretty obvious from the above observation that the number of channels occupied in Chicago is definitely higher than occupied in Blacksburg, which means more whitespace availability in Blacksburg as compared to Chicago.
-\pagebreak
+	From the above observations we see that the number of channels occupied in Chicago is definitely higher than the number occupied in Blacksburg, which means more ``TV whitespace'' is available in Blacksburg than in Chicago.
 	
 	%NOTE: Distance of these cities from Chicago city:
 	%
@@ -437,6 +437,12 @@ The thresholds for the occupancy measurements were carefully selected by plottin
 		%\item[(iii)] AWS band: The AWS band includes band
 	%\end{enumerate}
 	%We scanned through these bands by following the FCC spectrum dashboard \cite{fcc_dashboard} which provided a decent idea about the primary users. But, we couldn't get much information on what technology they are operating on what band. From \cite{lte_spectrum}, which says 
+
+%@ELECTRONIC{lte_spectrum,
+		%author = "Phil Goldstein",
+		%title = "How much {LTE} spectrum do {V}erizon, {AT}\&{T}, {S}print and {T}-mobile have - and where?",
+		%howpublished = "\url{http://www.fiercewireless.com/special-reports/how-much-lte-spectrum-do-verizon-att-sprint-and-t-mobile-have-and-where}"
+%}
 	
 	%\subsubsection{Other bands}
 	%
@@ -445,16 +451,21 @@ The thresholds for the occupancy measurements were carefully selected by plottin
 
 \section{Conclusion}
 
-In a nutshell, we found significant variation in occupancy for the 450 - 470 MHz LMR band during Virginia Tech football game weekend with respect to regular weekends and regular weekdays. From this comparison, we conclude that, the occupancy variations are distinctly higher in the channels that provide school related services which are directly influenced by the game event.
+In this report, we pursued a broad-based RF spectrum survey of Blacksburg. The measurements for this survey were collected from the Virginia Tech spectrum observatory, installed on the roof-top of Whittemore Hall which is continuously acquiring and logging measurements onto a network hard drive. We use these measurement logs to plot minimum, maximum and mean power spectral densities which helped in selecting the decision threshold. We also plotted power spectrograms and duty cycle plots examining per-band occupancy, thereby selecting bands showing significant variation.
 
-Also, due to overwhelming number of services provided in Chicago's 450 - 470 MHz LMR band, particularly trunked radio services in action, we see a heavy occupancy in most of the LMR channels as compared to Blacksburg. From the 700 MHz LMR band, we conclude that the band shows a higher occupancy in urban areas as compared to rural areas where the band is almost empty. Lastly, we also saw a higher occupancy in the TV bands in Chicago than in Blacksburg, thereby concluding less availability of whitespace in urban areas as compared to rural areas which is quite obvious.
+In this study, we found significant variation in occupancy for the 450 - 470 MHz LMR band during Virginia Tech football game weekend days compared to regular weekend days and regular weekdays. From this comparison, we conclude that the occupancy is distinctly higher in the channels that used to provide services which are directly related to the game event. 
 
-\pagebreak
+We also examined bands showing significant variation between Blacksburg and Chicago. Due to the large number of services provided in Chicago's 450 - 470 MHz LMR band, particularly trunked radio services, we see a higher occupancy in most of the LMR channels compared to Blacksburg. 
+
+In the 700 MHz LMR band, we also see a higher occupancy in Chicago as compared to Blacksburg, where the band is almost empty.
+
+Lastly, we see a higher occupancy in the TV bands in Chicago than in Blacksburg.
+
 \section*{Appendix}
 
 \subsection*{Current NCPD configuration}
 
-\begin{lstlisting}
+\begin{verbatim}
 
 {
 	"version":1,
@@ -497,7 +508,62 @@ Also, due to overwhelming number of services provided in Chicago's 450 - 470 MHz
 		]
 }
 
-\end{lstlisting}
+\end{verbatim}
+\pagebreak
+
+\subsection*{Decision Threshold selection in the 450 - 470 LMR band comparison for Blacksburg and Chicago}
+
+\begin{figure}[ht!]
+	\centering
+		\includegraphics[width=0.95\textwidth]{450_470_Blacksburg_decision_threshold_PSD.png}
+	\caption{450 - 470 MHz LMR band Min-Max-Mean PSD with a threshold in Blacksburg}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+		\includegraphics[width=0.95\textwidth]{450_470_Chicago_decision_threshold_PSD.png}
+	\caption{450 - 470 MHz LMR band Min-Max-Mean PSD with a threshold in Chicago}
+\end{figure}
+
+\subsection*{Blacksburg Game Day Occupancy Comparison Miscellaneous Plots}
+
+\begin{figure}[ht!]
+	\centering
+		\includegraphics[width=0.95\textwidth]{57_88.png}
+	\caption{57 - 88 MHz band game day Maximum PSD, Power Spectrogram and Duty-cycle plot}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+		\includegraphics[width=0.95\textwidth]{57_88_occ_chart.png}
+	\caption{57 - 88 MHz band game day Occupancy comparison}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+		\includegraphics[width=0.95\textwidth]{88_108.png}
+	\caption{88 - 108 MHz band game day Maximum PSD, Power Spectrogram and Duty-cycle plot}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+		\includegraphics[width=0.95\textwidth]{88_108_occ_chart.png}
+	\caption{88 - 108 MHz band game day Occupancy comparison}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+		\includegraphics[width=0.95\textwidth]{108_130.png}
+	\caption{108 - 130 MHz band game day Maximum PSD, Power Spectrogram and Duty-cycle plot}
+\end{figure}
+
+\begin{figure}[ht!]
+	\centering
+		\includegraphics[width=0.95\textwidth]{108_130_occ_chart.png}
+	\caption{108 - 130 MHz band game day Occupancy comparison}
+\end{figure}
+
+% subsection*{Blacksburg and Chicago Occupancy Comparison Miscellaneous Plots}
 
 
 %\subsection{Power spectrogram of TV Bands ranging 57 - 406 MHz comparing Chicago and Blacksburg}
@@ -541,6 +607,7 @@ Also, due to overwhelming number of services provided in Chicago's 450 - 470 MHz
 % In LaTeX, each appendix is a "chapter"
 % \chapter{Program Source}
 
+\bibliographystyle{IEEETran}
 \bibliography{reference}
 
 \end{document}
